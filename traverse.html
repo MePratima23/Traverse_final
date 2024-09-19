@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bearing and Traverse Adjustments</title>
+    <link rel="stylesheet" href="traverse.css">
+</head>
+<body>
+    <h1>Traverse Computation</h1>
+    <h2>This is a application which helps to compute new coordinates as easting and northing from one known coordinate and observed angle and distances. We can also give the number of traverse lines as per need.</h2>       
+    <form id="traverseForm">
+        <h3>Enter Initial Coordinates:</h3>
+        <label for="easting">Initial Easting (m):</label>
+        <input type="number" id="easting" name="easting" required><br><br>
+
+        <label for="northing">Initial Northing (m):</label>
+        <input type="number" id="northing" name="northing" required><br><br>
+
+        <label for="numLines">Number of Traverse Lines:</label>
+        <input type="number" id="numLines" name="numLines" min="1" required><br><br>
+
+        <div id="traverseInputs"></div>
+
+        <button type="button" onclick="computeTraverse()">Compute Bearings and Coordinates</button>
+    </form>
+
+    <h3>Traverse Results:</h3>
+    <table id="resultsTable" border="1">
+        <thead>
+            <tr>
+                <th>Line</th>
+                <th>Bearing (<sup>'</sup>)</th>
+                <th>Distance (m)</th>
+                <th>Delta Easting (m)</th>
+                <th>Delta Northing (m)</th>
+                <th>New Easting (m)</th>
+                <th>New Northing (m)</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script src="traverse.js"></script>
+</body>
+</html>
